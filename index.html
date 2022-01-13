@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="money">R$ 50,00</h1>
+      <section class="container-games">
+        <ul class="game-list"></ul>
+      </section>
+      <section class='container-infos'>
+        <div class='infos-box-left'>
+          <div class='infos-wrapper'>
+            <span class='infos-game-name'>Lota fácil</span>
+            <span class='prob'>1/5.000.000</span>
+            <span class='award'>Prêmio: <b>R$ 50,00</b></span>
+          </div>
+          <div class='box-progress-time-bar'>
+            <div class='progress-time-bar'></div>
+          </div>
+        </div>
+        <div class='infos-box-right'>
+          <h4 class='game-status'>Errou!</h4>
+          <h4 class='game-try'>450652</h4>
+        </div>
+      </section>
+      <section class='character-container'>
+        <div class='character-box-top'>
+          <span class='character-level'>lvl 2</span>
+          <button class='button-up button'>Upar por R$ 50.000</button>
+        </div>
+        <div class='character-box-bottom'>
+          <span class='character-play-quantity'>2 Jogadas - 5x/s</span>
+          <button class="button-buy-mult button">Comprar 1 multiplicador</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src='./src/scripts/index.js'></script>
+  </body>
+</html>
