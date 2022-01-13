@@ -118,11 +118,12 @@ export const gameList = [
     prob: 50063860,
     image: `https://veja.abril.com.br/wp-content/uploads/2018/02/brasil-loteria-mega-sena-20180218-001.jpg`,
     unlock: false,
+    mega: true
   },
   
 ].reduce((acc, item, index) => ([...acc, { 
   ...item,
-  award: item.prob * 2.5 + (index ? acc[index-1].award * 2 : 0),
+  award: (item.prob * 2.5 + (index ? acc[index-1].award * 2 : 0)) / 2,
   unlockPrice: (item.prob * 2.5 + (index ? acc[index-1].award * 2 : 0)) / 4
 }]), [])
 

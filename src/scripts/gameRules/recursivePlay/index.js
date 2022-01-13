@@ -16,6 +16,8 @@ const recursivePlay = async () => {
     return play({ prob: currentGame.prob })
   })
 
+  if (currentGame.mega && won) alert('Você ganhou na Mega Sena!!!') 
+
   if (!won) {
     $gameStatus.textContent = 'Errou!'
     $gameStatus.classList.remove('right')
