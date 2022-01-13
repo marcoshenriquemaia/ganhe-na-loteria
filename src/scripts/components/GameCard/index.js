@@ -1,11 +1,14 @@
+import selectGame from "../../gameRules/selectGame/index.js"
+import unlockGame from "../../gameRules/unlockGame/index.js"
+import updateDom from "../../gameRules/updateDom/index.js"
 import formatReal from "../../helpers/formatReal.js"
 import Element from "../shared/Element/index.js"
 
-const GameCard = ({ name, prob, award, image, unlock, unlockPrice }) => {
+const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, selected }) => {
   const unlockButton = Element({
     elementType: 'button',
     classes: ['unlock-button'],
-    text: `R$ ${unlockPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
+    text: formatReal(unlockPrice)
   })
   
   const blockBox = Element({
@@ -39,15 +42,30 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice }) => {
 
   const container = Element({
     elementType: 'li',
-    classes: ['game'],
+    classes: ['game', selected.name === name ? 'select': false],
     children: [img, gameName, gameProb, awardElement, !unlock ? blockBox : false]
   })
 
+  container.addEventListener('click', () => {
+    const $gameList = document.querySelectorAll('.game')
+
+    if (!unlock) return
+    
+    selectGame(index)
+    updateDom()
+
+    $gameList.forEach($game => $game.classList.remove('select'))
+    container.classList.add('select')
+  })
+
+  unlockButton.addEventListener('click', () => {
+    unlockGame(index)
+    updateDom()
+  })
+
+  console.log(`select`, prob)
+
   return container
 }
-
-{/* <div class='block-box'>
-              <button class='unlock-button'>R$ 50.000</button>
-            </div> */}
 
 export default GameCard

@@ -5,8 +5,9 @@ const setDefaultStorage = () => {
     character: {
       level: 1,
       multi: 1,
-      money: 50
+      money: 99999999
     },
+    gameSelected: gameList[0],
     gameList,
   }
   localStorage.setItem('loteria_user', JSON.stringify(user))

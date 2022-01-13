@@ -1,28 +1,20 @@
-import GameCard from "./components/GameCard/index.js"
-import play from "./gameRules/play/index.js"
+import buyMulti from "./gameRules/buyMulti/index.js"
 import recursivePlay from "./gameRules/recursivePlay/index.js"
+import up from "./gameRules/up/index.js"
+import updateDom from "./gameRules/updateDom/index.js"
 import setDefaultStorage from "./storage/setDefaultStorage/index.js"
-import setMoney from "./storage/setMoney/index.js"
-const $gameList = document.querySelector('.game-list')
+
+const $buttonUp = document.querySelector('.button-up')
+const $buttonMult = document.querySelector('.button-buy-mult')
 
 const init = () => {
   const currentUser = localStorage.getItem('loteria_user')
   !currentUser && setDefaultStorage()
-  printGameList()
+  updateDom({ updateList: true })
   recursivePlay()
 }
 
-const printGameList = () => {
-  const storageUser = localStorage.getItem('loteria_user')
-  const user = JSON.parse(storageUser)
-
-  user.gameList.forEach(game => {
-    const gameCard = GameCard(game)
-
-    console.log(`gameCard`, gameCard)
-
-    $gameList.appendChild(gameCard)
-  })
-}
+$buttonUp.addEventListener('click', up)
+$buttonMult.addEventListener('click', buyMulti)
 
 init()

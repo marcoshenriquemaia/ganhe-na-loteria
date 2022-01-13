@@ -1,5 +1,5 @@
 const gameConfig = {
-  levelPriceMult: 2,
+  levelPriceMult: 2.5,
   currentGame: 0
 }
 

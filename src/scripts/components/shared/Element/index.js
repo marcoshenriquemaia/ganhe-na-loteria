@@ -43,7 +43,7 @@ const Element = ({
   if (nameInput) element.setAttribute("for", nameInput);
   if (target) element.setAttribute("target", target);
   if (inner) element.innerHTML += inner;
-  if (classes) classes.map((clss) => element.classList.add(clss));
+  if (classes) classes.map((clss) => clss && element.classList.add(clss));
   if (children) children.forEach(child => child && element.appendChild(child))
     if (icon) {
       element.classList.add("fas");
