@@ -238,6 +238,64 @@ body{
   margin-top: 25px;
 }
 
+@media only screen and (max-width: 1024px) {
+  body {
+    height: unset;
+  }
+
+  .container-games{
+    max-height: 250px;
+    overflow: auto;
+  }
+
+  .container-infos{
+    flex-direction: column;
+  }
+
+  .infos-box-left{
+    width: 100%;
+  }
+
+  .infos-game-name{
+    font-size: 16px;
+  }
+
+  .award{
+    font-size: 16px;
+  }
+
+  .prob{
+    font-size: 16px;
+  }
+
+  .infos-wrapper{
+    height: 50px;
+  }
+  .game-status{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .character-level{
+    font-size: 30px;
+  }
+
+  .character-play-quantity{
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px
+  }
+
+  .character-box-bottom{
+    flex-direction: column;
+  }
+
+  .money{
+    font-size: 40px;
+    margin-top: 10px
+  }
+}
+
 @keyframes bar-grow {
   from {
     width: 0%;
