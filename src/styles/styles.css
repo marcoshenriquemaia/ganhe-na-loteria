@@ -294,6 +294,10 @@ body{
     font-size: 40px;
     margin-top: 10px
   }
+
+  .award{
+    text-align: center;
+  }
 }
 
 @keyframes bar-grow {
