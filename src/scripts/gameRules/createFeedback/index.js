@@ -7,13 +7,12 @@ const createFeedback = (status, mult, ms) => {
   const yrandoMult = Math.floor(Math.random() * 2) >= 1 ? 1 : -1
 
   const _status = document.createElement('h4')
-  _status.classList.add('game-status')
   status === 'Acertou!' && _status.classList.add('right')
+  _status.classList.add('game-status')
   _status.textContent = status
-
-  console.log(`ms`, ms)
-
+  
   const _play = document.createElement('span')
+  status === 'Acertou!' && _play.classList.add('right-play')
   _play.classList.add('play')
   _play.textContent = `${mult}x`
   _play.style.width = `${40 + (ms/100)}px`

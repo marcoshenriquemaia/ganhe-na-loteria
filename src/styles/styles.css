@@ -170,7 +170,7 @@ body{
 .game-status{
   font-size: 50px;
   margin-bottom: 15px;
-  color: red;
+  color: #f1c40f;
   position: absolute;
   animation: status 500ms;
   transform: translate(0, 0);
@@ -300,6 +300,14 @@ body{
   position: relative;
   width: 100%;
   justify-content: center;
+}
+
+.right-play{
+  background-color: green;
+  color: #ffffff;
+  min-width: 60px;
+  min-height: 60px;
+  border: 1px solid #ffffff;
 }
 
 @media only screen and (max-width: 1024px) {
