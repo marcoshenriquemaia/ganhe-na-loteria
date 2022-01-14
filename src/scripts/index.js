@@ -1,3 +1,4 @@
+import Confetti from "./components/Confetti/index.js"
 import buyMulti from "./gameRules/buyMulti/index.js"
 import recursivePlay from "./gameRules/recursivePlay/index.js"
 import up from "./gameRules/up/index.js"
@@ -7,7 +8,7 @@ import setDefaultStorage from "./storage/setDefaultStorage/index.js"
 const $buttonUp = document.querySelector('.button-up')
 const $buttonMult = document.querySelector('.button-buy-mult')
 
-const init = () => {
+const init = async () => {
   const currentUser = localStorage.getItem('loteria_user')
   !currentUser && setDefaultStorage()
   updateDom({ updateList: true })

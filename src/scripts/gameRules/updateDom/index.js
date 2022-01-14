@@ -20,7 +20,7 @@ const updateDom = (props) => {
   $gameName.textContent = user.gameSelected.name
   $prob.textContent = `1/${user.gameSelected.prob}`
   $award.textContent = formatReal(user.gameSelected.award)
-  $playQuantity.textContent = `${user.character.multi} jogada a cada ${((4000 / (user.character.level))).toFixed(2)} ms`
+  $playQuantity.textContent = `${user.character.multi > 1 ? `${user.character.multi} jogadas` : `${user.character.multi} jogada`} a cada ${((4000 / (user.character.level))).toFixed(2)} ms`
   $buttonMult.textContent = `Comprar MULT por ${formatReal((user.character.multi) * 5000)}`
 
   props?.updateList && printGameList()
