@@ -123,7 +123,7 @@ export const gameList = [
   
 ].reduce((acc, item, index) => ([...acc, { 
   ...item,
-  award: (item.prob * 2.5 + (index ? acc[index-1].award * 2 : 0)) / 2,
+  award: (item.prob * 2.5) * (1.2 + index/10),
   unlockPrice: (item.prob * 2.5 + (index ? acc[index-1].award * 2 : 0)) / 4
 }]), [])
 
