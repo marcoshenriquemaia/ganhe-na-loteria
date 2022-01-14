@@ -1,4 +1,5 @@
 import formatReal from "../../helpers/formatReal.js"
+import priceTransition from "../../helpers/priceTransition.js"
 import getUser from "../../storage/getUser/index.js"
 import printGameList from "../printGameList/index.js"
 import upLevelPrice from "../upLevelPrice/index.js"
@@ -14,7 +15,7 @@ const updateDom = (props) => {
   const $playQuantity = document.querySelector('.character-play-quantity')
   const $buttonMult = document.querySelector('.button-buy-mult')
 
-  $money.textContent = formatReal(user.character.money)
+  priceTransition({ $element: $money, duration: 200, newPrice: user.character.money })
   $buttonUp.textContent = `Upar por ${formatReal(upLevelPrice(user.character.level))}`
   $level.textContent = `Nível ${user.character.level}`
   $gameName.textContent = user.gameSelected.name
