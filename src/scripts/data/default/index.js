@@ -120,7 +120,6 @@ export const gameList = [
     unlock: false,
     mega: true
   },
-  
 ].reduce((acc, item, index) => ([...acc, { 
   ...item,
   award: (item.prob * 2.5) * (1.2 + index/10),

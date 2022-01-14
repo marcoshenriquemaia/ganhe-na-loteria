@@ -2,6 +2,7 @@ import selectGame from "../../gameRules/selectGame/index.js"
 import unlockGame from "../../gameRules/unlockGame/index.js"
 import updateDom from "../../gameRules/updateDom/index.js"
 import formatReal from "../../helpers/formatReal.js"
+import getUser from "../../storage/getUser/index.js"
 import Element from "../shared/Element/index.js"
 
 const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, selected }) => {
@@ -59,6 +60,10 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
   })
 
   unlockButton.addEventListener('click', () => {
+    const user = getUser()
+    
+    if (!user.gameList[index-1].unlock) return
+
     unlockGame(index)
     updateDom()
   })
