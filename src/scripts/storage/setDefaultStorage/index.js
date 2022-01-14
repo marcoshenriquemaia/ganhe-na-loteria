@@ -5,7 +5,7 @@ const setDefaultStorage = () => {
     character: {
       level: 1,
       multi: 1,
-      money: 10
+      money: 999999999999
     },
     gameSelected: gameList[0],
     gameList,

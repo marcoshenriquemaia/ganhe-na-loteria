@@ -1,4 +1,5 @@
 import setMoney from "../../storage/setMoney/index.js"
+import createFeedback from "../createFeedback/index.js"
 import play from "../play/index.js"
 import progressBar from "../progressBar/index.js"
 import updateDom from "../updateDom/index.js"
@@ -19,8 +20,7 @@ const recursivePlay = async () => {
   if (currentGame.mega && won) alert('Você ganhou na Mega Sena!!!') 
 
   if (!won) {
-    $gameStatus.textContent = 'Errou!'
-    $gameStatus.classList.remove('right')
+    createFeedback('Errou!')
     return setTimeout(recursivePlay, 4000 / user.character.level)
   }
 
@@ -28,8 +28,7 @@ const recursivePlay = async () => {
 
   updateDom()
 
-  $gameStatus.textContent = 'Acertou!'
-  $gameStatus.classList.add('right')
+  createFeedback('Acertou!')
 
   setTimeout(recursivePlay, (4000 / (user.character.level)))
 }
