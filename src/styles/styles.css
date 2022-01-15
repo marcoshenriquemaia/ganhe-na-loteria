@@ -336,10 +336,14 @@ body{
 
   .character-box-top{
     flex-direction: column;
+    width: 100%;
   }
 
   .button-up, .button-buy-mult{
-    margin-bottom: 15px;;
+    margin: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    min-width: unset;
   }
 
   .infos-box-left{
@@ -383,6 +387,7 @@ body{
 
   .character-box-bottom{
     flex-direction: column;
+    width: 100%;
   }
 
   .money{
