@@ -34,10 +34,12 @@ body{
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .game{
   width: 250px;
+  min-width: 250px;
   height: 250px;
   border: 1px solid #000000;
   display: flex;
@@ -105,7 +107,7 @@ body{
 .infos-box-left{
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
 }
 
 .box-progress-time-bar{
@@ -128,7 +130,7 @@ body{
 }
 
 .infos-wrapper{
-  height: 100px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -138,6 +140,7 @@ body{
 .infos-game-name{
   font-size: 30px;
   margin-right: 20px;
+  font-weight: 700;
 }
 
 .prob{
@@ -312,17 +315,31 @@ body{
 }
 
 @media only screen and (max-width: 1024px) {
-  body {
-    height: unset;
+  .main{
+    justify-content: space-evenly;
   }
 
   .container-games{
-    max-height: 250px;
+    max-height: 300px;
+  }
+
+  .game-list{
+    flex-wrap: nowrap;
+    flex-direction: row;
     overflow: auto;
+    justify-content: unset;
   }
 
   .container-infos{
     flex-direction: column;
+  }
+
+  .character-box-top{
+    flex-direction: column;
+  }
+
+  .button-up, .button-buy-mult{
+    margin-bottom: 15px;;
   }
 
   .infos-box-left{
@@ -335,6 +352,9 @@ body{
 
   .award{
     font-size: 16px;
+    width: 100%;
+    display: inline;
+    text-align: start;
   }
 
   .prob{
@@ -342,7 +362,10 @@ body{
   }
 
   .infos-wrapper{
-    height: 50px;
+    /* height: 50px; */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
   }
   .game-status{
     font-size: 20px;
@@ -354,7 +377,6 @@ body{
   }
 
   .character-play-quantity{
-    font-size: 16px;
     text-align: center;
     margin-bottom: 15px
   }
@@ -367,9 +389,11 @@ body{
     font-size: 40px;
     margin-top: 10px
   }
+}
 
-  .award{
-    text-align: center;
+@media only screen and (max-width: 375px) {
+  body {
+    height: unset;
   }
 }
 
