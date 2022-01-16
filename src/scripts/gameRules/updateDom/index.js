@@ -15,7 +15,7 @@ const updateDom = (props) => {
   const $playQuantity = document.querySelector('.character-play-quantity')
   const $buttonMult = document.querySelector('.button-buy-mult')
 
-  priceTransition({ $element: $money, duration: 200, newPrice: user.character.money })
+  $money.textContent = formatReal(user.character.money)
   $buttonUp.textContent = `Upar por ${formatReal(upLevelPrice(user.character.level))}`
   $level.textContent = `Nível ${user.character.level}`
   $gameName.textContent = user.gameSelected.name

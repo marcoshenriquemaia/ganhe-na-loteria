@@ -4,7 +4,6 @@ const priceTransition = ({ $element, newPrice, duration }) => {
 	const newPriceInt = newPrice
 	const currentPriceInt = getMoney($element.textContent) ? getMoney($element.textContent) / 100 : 0
 	const newDuration = duration / 50
-
   
 	const fakeArray = [...new Array(newDuration)].map((_) => true)
 	const sumCoefficient = (newPriceInt - currentPriceInt) / newDuration
