@@ -40,7 +40,7 @@ body{
 .game{
   width: 250px;
   min-width: 250px;
-  height: 250px;
+  height: 300px;
   border: 1px solid #000000;
   display: flex;
   justify-content: center;
@@ -49,6 +49,10 @@ body{
   margin: 15px;
   position: relative;
   cursor: pointer;
+}
+
+.game b {
+  margin-bottom: 10px;
 }
 
 .block-box{

@@ -5,11 +5,21 @@ import formatReal from "../../helpers/formatReal.js"
 import getUser from "../../storage/getUser/index.js"
 import Element from "../shared/Element/index.js"
 
-const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, selected }) => {
+const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, selected, ticket }) => {
+  const user = getUser()
+
+  const ticketPrice = ticket ? ((award / (prob * 1.8))) * user.character.multi : 0
+
   const unlockButton = Element({
     elementType: 'button',
     classes: ['unlock-button'],
     text: formatReal(unlockPrice)
+  })
+
+  const ticketElement= Element({
+    elementType: 'span',
+    classes: ['ticket'],
+    text: `Bilhete: ${formatReal((award / (prob * 1.8)))}`
   })
   
   const blockBox = Element({
@@ -20,7 +30,7 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
 
   const awardElement = Element({
     elementType: 'b',
-    text: formatReal(award)
+    text: formatReal(award + (ticketPrice * prob))
   })
 
   const gameProb = Element({
@@ -44,7 +54,7 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
   const container = Element({
     elementType: 'li',
     classes: ['game', selected.name === name ? 'select': false],
-    children: [img, gameName, gameProb, awardElement, !unlock ? blockBox : false]
+    children: [img, gameName, gameProb, awardElement, !unlock ? blockBox : false, ticket ? ticketElement : false]
   })
 
   container.addEventListener('click', () => {

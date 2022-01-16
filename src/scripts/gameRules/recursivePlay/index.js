@@ -8,10 +8,14 @@ import updateDom from "../updateDom/index.js"
 const recursivePlay = async () => {
   const storageUser = localStorage.getItem('loteria_user')
   const user = JSON.parse(storageUser)
-
   const currentGame = user.gameSelected
+  const ticketPrice = currentGame.ticket ? ((currentGame.award / (currentGame.prob * 1.8))) * user.character.multi : 0
+
+  if (user.character.money < ticketPrice && currentGame.ticket) return setTimeout(recursivePlay, (4000 / (user.character.level)))
 
   progressBar(4000 / user.character.level)
+
+  currentGame.ticket && setMoney({ toInclude: ticketPrice * -1 })
 
   const won = [...new Array(user.character.multi)].some((_) => {
     return play({ prob: currentGame.prob })
@@ -20,11 +24,13 @@ const recursivePlay = async () => {
   if (currentGame.mega && won) alert('Você ganhou na Mega Sena!!!') 
   
   if (!won) {
+    updateDom()
+    
     createFeedback('Errou!', user.character.multi, (4000 / (user.character.level)))
     return setTimeout(recursivePlay, 4000 / user.character.level)
   }
   
-  setMoney({ toInclude: currentGame.award })
+  setMoney({ toInclude: currentGame.award + (ticketPrice * currentGame.prob) })
   
   updateDom()
   

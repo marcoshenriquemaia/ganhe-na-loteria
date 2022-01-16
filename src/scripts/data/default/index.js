@@ -28,96 +28,112 @@ export const gameList = [
     prob: 100,
     image: `https://exame.com/wp-content/uploads/2017/09/empresa.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Jogo do bicho',
     prob: 200,
     image: `https://www.futebolnaveia.com.br/wp-content/uploads/2021/01/jogo.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Bingo da igreja',
     prob: 250,
     image: `https://potricharquitetura.com/wp-content/uploads/igreja-santa-terezinha.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Squid Game',
     prob: 456,
     image: `https://www.magazine-hd.com/apps/wp/wp-content/uploads/2021/09/squid-game.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Bolão futebol',
     prob: 500,
     image: `https://www.mktesportivo.com/wp-content/uploads/2021/10/aposta_esportiva.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Sorteio do bairro',
     prob: 1000,
     image: `https://blog.laredo.com.br/wp-content/uploads/2018/12/257730-bairro-nobre-ou-condominio-fechado-entenda-as-vantagens-de-cada-um-1024x682.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Sena da cidade',
     prob: 10000,
     image: `https://exame.com/wp-content/uploads/2019/09/aaaa.gif`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Sena do estado',
     prob: 100000,
     image: `https://s1.static.brasilescola.uol.com.br/be/e/metropole%20e%20megalopole.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Dia de Sorte',
     prob: 2629575,
     image: `https://www.dci.com.br/wp-content/uploads/2022/01/resultado-do-dia-de-sorte-553.jpeg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Lotofácil',
     prob: 3268760,
     image: `https://rciararaquara.com.br/wp-content/uploads/2021/04/LotoFacil.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Super Sete',
     prob: 10000000,
     image: `https://tribunapr.uol.com.br/wp-content/uploads/sites/69/2021/07/09142913/supersete-970x550.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Lotomania',
     prob: 11372635,
     image: `https://www.oliberal.com/image/contentid/policy:1.479937:1641574711/lotomania-foto-cartela1.jpg?f=2x1&$p$f=557735a&w=1500&$w=f075b93`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Dupla Sena',
     prob: 15890700,
     image: `https://www.oliberal.com/image/contentid/policy:1.481514:1641933788/dupla-sena.jpg?f=2x1&$p$f=b23ea0a&w=1500&$w=f075b93`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Quina',
     prob: 24040016,
     image: `https://tribunapr.uol.com.br/wp-content/uploads/sites/69/2021/10/13162550/quina-elk-970x550.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Timemania',
     prob: 26472637,
     image: `https://fdr.com.br/wp-content/uploads/2020/11/timemania-3.jpg`,
     unlock: false,
+    ticket: true
   },
   {
     name: 'Mega Sena',
     prob: 50063860,
     image: `https://veja.abril.com.br/wp-content/uploads/2018/02/brasil-loteria-mega-sena-20180218-001.jpg`,
     unlock: false,
+    ticket: true,
     mega: true
   },
 ].reduce((acc, item, index) => ([...acc, { 
