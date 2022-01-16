@@ -1,4 +1,3 @@
-import Confetti from "./components/Confetti/index.js"
 import buyMulti from "./gameRules/buyMulti/index.js"
 import recursivePlay from "./gameRules/recursivePlay/index.js"
 import up from "./gameRules/up/index.js"

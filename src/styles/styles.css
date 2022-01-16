@@ -327,6 +327,14 @@ body{
     max-height: 300px;
   }
 
+  .game{
+    height: 250px;
+  }
+
+  .game-image{
+    width: 60%;
+  }
+
   .game-list{
     flex-wrap: nowrap;
     flex-direction: row;
