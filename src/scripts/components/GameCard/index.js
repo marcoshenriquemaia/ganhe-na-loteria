@@ -28,6 +28,12 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
     children: [unlockButton]
   })
 
+  const probTitle = Element({
+    elementType: 'h4',
+    classes: ['prob-title'],
+    text: 'Probabilidade:'
+  })
+
   const awardElement = Element({
     elementType: 'b',
     text: formatReal(award + (ticketUnitPrice * prob))
@@ -36,7 +42,7 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
   const gameProb = Element({
     elementType: 'span',
     classes: ['game-prob'],
-    text: `Probabilidade: 1/${prob}`
+    text: `1 em ${prob.toLocaleString('pt-BR')} (${(100 / prob).toLocaleString('pt-BR', { maximumFractionDigits: 7 })}%)`
   })
 
   const gameName = Element({
@@ -54,7 +60,7 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
   const container = Element({
     elementType: 'li',
     classes: ['game', selected.name === name ? 'select': false],
-    children: [img, gameName, gameProb, awardElement, !unlock ? blockBox : false, ticket ? ticketElement : false]
+    children: [img, gameName, probTitle, gameProb, awardElement, !unlock ? blockBox : false, ticket ? ticketElement : false]
   })
 
   container.addEventListener('click', () => {

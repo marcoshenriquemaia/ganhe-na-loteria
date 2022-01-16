@@ -91,7 +91,7 @@ body{
 }
 
 .game-name{
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 15px;
 }
 
@@ -318,17 +318,21 @@ body{
   border: 1px solid #ffffff;
 }
 
+.prob-title{
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
   .main{
     justify-content: space-evenly;
   }
 
   .container-games{
-    max-height: 300px;
+    max-height: 350px;
   }
 
   .game{
-    height: 250px;
+    height: 300px;
   }
 
   .game-image{
@@ -363,7 +367,7 @@ body{
   }
 
   .infos-game-name{
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .award{

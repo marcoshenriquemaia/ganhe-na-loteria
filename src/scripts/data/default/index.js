@@ -26,7 +26,7 @@ export const gameList = [
   {
     name: 'Rifa',
     prob: 100,
-    image: `https://exame.com/wp-content/uploads/2017/09/empresa.jpg`,
+    image: `https://images-na.ssl-images-amazon.com/images/I/41oPMULBnxL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg`,
     unlock: false,
     ticket: true
   },
