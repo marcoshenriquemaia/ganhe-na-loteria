@@ -9,7 +9,8 @@ const recursivePlay = async () => {
   const storageUser = localStorage.getItem('loteria_user')
   const user = JSON.parse(storageUser)
   const currentGame = user.gameSelected
-  const ticketPrice = currentGame.ticket ? ((currentGame.award / (currentGame.prob * 1.8))) * user.character.multi : 0
+  const ticketUnitPrice = Number(((currentGame.award / (currentGame.prob * 1.8))).toFixed(2))
+  const ticketPrice = currentGame.ticket ? ticketUnitPrice * user.character.multi : 0
 
   if (user.character.money < ticketPrice && currentGame.ticket) return setTimeout(recursivePlay, (4000 / (user.character.level)))
 
@@ -30,7 +31,7 @@ const recursivePlay = async () => {
     return setTimeout(recursivePlay, 4000 / user.character.level)
   }
   
-  setMoney({ toInclude: currentGame.award + (ticketPrice * currentGame.prob) })
+  setMoney({ toInclude: currentGame.award + (ticketUnitPrice * currentGame.prob) })
   
   updateDom()
   

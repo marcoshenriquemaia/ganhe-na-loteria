@@ -7,8 +7,8 @@ import Element from "../shared/Element/index.js"
 
 const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, selected, ticket }) => {
   const user = getUser()
-
-  const ticketPrice = ticket ? ((award / (prob * 1.8))) * user.character.multi : 0
+  const ticketUnitPrice = ((award / (prob * 1.8)))
+  const ticketPrice = ticket ? ticketUnitPrice * user.character.multi : 0
 
   const unlockButton = Element({
     elementType: 'button',
@@ -30,7 +30,7 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
 
   const awardElement = Element({
     elementType: 'b',
-    text: formatReal(award + (ticketPrice * prob))
+    text: formatReal(award + (ticketUnitPrice * prob))
   })
 
   const gameProb = Element({
