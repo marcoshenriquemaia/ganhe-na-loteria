@@ -7,7 +7,7 @@ import Element from "../shared/Element/index.js"
 
 const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, selected, ticket }) => {
   const user = getUser()
-  const ticketUnitPrice = ((award / (prob * 1.8)))
+  const ticketUnitPrice = ticket ? ((award / (prob * 1.8))) : 0
   const ticketPrice = ticket ? ticketUnitPrice * user.character.multi : 0
 
   const unlockButton = Element({

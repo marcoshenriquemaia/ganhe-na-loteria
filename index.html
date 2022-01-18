@@ -16,39 +16,17 @@
     <title>Ganhe na Mega</title>
   </head>
   <body>
-    <main class="main">
-      <div class='money-wrapper'>
-        <canvas class='confetti-1 confetti'></canvas>
-        <h1 class="money">R$ 50,00</h1>
-      </div>
-      <section class="container-games">
-        <ul class="game-list"></ul>
-      </section>
-      <section class='container-infos'>
-        <div class='infos-box-left'>
-          <div class='infos-wrapper'>
-            <span class='infos-game-name'>Nome</span>
-            <span class='prob'>1/?</span>
-            <span class='award'>Prêmio: <b>R$ 0,00</b></span>
-          </div>
-          <div class='box-progress-time-bar'>
-            <div class='progress-time-bar'></div>
-          </div>
-        </div>
-        <!-- <div class='infos-box-right'></div> -->
-      </section>
-      <section class='character-container'>
-        <div class='character-box-top'>
-          <button class='button-up button'>Upar por R$ 0,00</button>
-          <span class='character-level'>lvl 2</span>
-        </div>
-        <div class='character-box-bottom'>
-          <button class="button-buy-mult button">Comprar MULT por R$ 0</button>
-          <span class='character-play-quantity'>? a cada ? ms</span>
-        </div>
-      </section>
+    <main class="main main-index">
+      <h1 class='principal-title'>Jogo: ganhe na mega sena!</h1>
+      <h2 class='sub-title'>O objetivo do jogo é ganhar na mega sena!</h2>
+      <span class='how-to-play'>Como jogar:</span>
+      <ul class='tips'>
+        <li class='tip'>Aumente seu nível para aumentar a quantidade de jogadas por segundo</li>
+        <li class='tip'>Compre MULTs para aumentar a quantidade de jogadas por vez</li>
+        <li class='tip'>Compre os próximos sorteios. Eles te dão mais dinheiro</li>
+      </ul>
+      <a href='game.html' class='button-play button'>Jogar</a>
+      <img class='bg-image' src='./src/assets/images/Screenshot_2.png'/>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-    <script type="module" src='./src/scripts/index.js'></script>
   </body>
 </html>

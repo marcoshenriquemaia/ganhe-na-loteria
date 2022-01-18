@@ -93,6 +93,7 @@ body{
 .game-name{
   font-size: 25px;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .game-list{
@@ -320,6 +321,44 @@ body{
 
 .prob-title{
   margin-bottom: 10px;
+}
+
+.principal-title{
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.sub-title{
+  margin-bottom: 20px;
+}
+
+.how-to-play{
+  margin-bottom: 15px;
+}
+
+.tip{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tips{
+  margin-bottom: 20px;
+}
+
+.button-play{
+  text-decoration: none;
+  display: inline-block;
+  min-width: unset;
+}
+
+.main-index{
+  background-color: #ffffff4D;
+}
+
+.bg-image{
+  position: absolute;
+  z-index: -1;
+  opacity: .1;
 }
 
 @media only screen and (max-width: 1024px) {
