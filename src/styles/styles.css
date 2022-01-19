@@ -20,7 +20,7 @@ body{
 .container-games{
   width: 100%;
   border: 1px solid #000000;
-  height: 50%;
+  height: 52%;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -494,12 +494,6 @@ body{
   .money{
     font-size: 40px;
     margin-top: 10px
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  body {
-    height: unset;
   }
 }
 
