@@ -1,5 +1,6 @@
 import formatReal from "../../helpers/formatReal.js"
 import getUser from "../../storage/getUser/index.js"
+import { getTicketDiscount } from "../getTicketDiscount/index.js"
 import printGameList from "../printGameList/index.js"
 import upLevelPrice from "../upLevelPrice/index.js"
 
@@ -14,7 +15,8 @@ const updateDom = (props) => {
   const $award = document.querySelector('.award b')
   const $playQuantity = document.querySelector('.character-play-quantity')
   const $buttonMult = document.querySelector('.button-buy-mult')
-  const ticketUnitPrice = user.gameSelected.ticket ? ((user.gameSelected.award / (user.gameSelected.prob * 1.8))) : 0
+  const $ticketDiscount = document.querySelector('.ticket-discount')
+  const $ticketDiscountInfo = document.querySelector('.ticket-discount-info')
 
   $money.textContent = formatReal(user.character.money)
   $buttonUp.textContent = `Upar por ${formatReal(upLevelPrice(user.character.level))}`
@@ -25,7 +27,8 @@ const updateDom = (props) => {
   // $award.textContent = formatReal(user.gameSelected.award + (ticketUnitPrice * user.gameSelected.prob))
   $playQuantity.textContent = `${user.character.multi > 1 ? `${user.character.multi} jogadas` : `${user.character.multi} jogada`} a cada ${((4000 / (user.character.level))).toFixed(2)} ms`
   $buttonMult.textContent = `Comprar MULT por ${formatReal((user.character.multi) * 5000)}`
-
+  $ticketDiscount.textContent = `Desconto no bilhete ${formatReal(getTicketDiscount())}` 
+  $ticketDiscountInfo.textContent = `R$ -${user.character.ticketDiscount / 100}`
   props?.updateList && printGameList()
 }
 

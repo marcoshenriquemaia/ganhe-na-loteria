@@ -19,7 +19,7 @@ const GameCard = ({ name, prob, award, image, unlock, unlockPrice, index, select
   const ticketElement= Element({
     elementType: 'span',
     classes: ['ticket'],
-    text: `Bilhete: ${formatReal((award / (prob * 1.8)))}`
+    text: `Bilhete: ${formatReal((award / (prob * 1.8)) - (user.character.ticketDiscount / 100))}`
   })
   
   const blockBox = Element({

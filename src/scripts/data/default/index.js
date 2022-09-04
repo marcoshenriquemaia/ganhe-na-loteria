@@ -73,9 +73,30 @@ export const gameList = [
     ticket: true
   },
   {
+    name: 'Ganhe já!',
+    prob: 125000,
+    image: `https://resultadotelesena.net/wp-content/uploads/2017/06/resultado-da-tele-sena.jpg`,
+    unlock: false,
+    ticket: true
+  },
+  {
+    name: 'Número da sorte',
+    prob: 205882,
+    image: `https://resultadotelesena.net/wp-content/uploads/2017/06/resultado-da-tele-sena.jpg`,
+    unlock: false,
+    ticket: true
+  },
+  {
     name: 'Sena do estado',
-    prob: 100000,
+    prob: 500000,
     image: `https://s1.static.brasilescola.uol.com.br/be/e/metropole%20e%20megalopole.jpg`,
+    unlock: false,
+    ticket: true
+  },
+  {
+    name: 'Sena Regional',
+    prob: 1000000,
+    image: `https://s1.static.brasilescola.uol.com.br/be/conteudo/images/cidade-nova-york-centro-uma-das-principais-megalopoles-mundo-5629236fb0b86.jpg`,
     unlock: false,
     ticket: true
   },
