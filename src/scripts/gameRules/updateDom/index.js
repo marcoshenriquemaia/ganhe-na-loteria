@@ -17,8 +17,8 @@ const updateDom = (props) => {
   const $buttonMult = document.querySelector('.button-buy-mult')
   const $ticketDiscount = document.querySelector('.ticket-discount')
   const $ticketDiscountInfo = document.querySelector('.ticket-discount-info')
-  const timeMS = ((4000 / (user.character.level))).toFixed(2)
-  const timeS = (timeMS / 1000).toFixed(2)
+  const timeMS = ((4000 / (user.character.level)))
+  const timeS = (timeMS / 1000)
 
   $money.textContent = formatReal(user.character.money)
   $buttonUp.textContent = `Upar por ${formatReal(upLevelPrice(user.character.level))}`
