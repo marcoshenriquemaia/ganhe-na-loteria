@@ -1,4 +1,5 @@
 import { gameList } from "../../data/default/index.js"
+import { STO } from "../../gameRules/mock/storage.js"
 
 const setDefaultStorage = () => {
   const user = {
@@ -11,7 +12,7 @@ const setDefaultStorage = () => {
     gameSelected: gameList[0],
     gameList,
   }
-  localStorage.setItem('loteria_user', JSON.stringify(user))
+  localStorage.setItem(STO, JSON.stringify(user))
 }
 
 export default setDefaultStorage

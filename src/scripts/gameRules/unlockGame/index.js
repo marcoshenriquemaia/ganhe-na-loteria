@@ -1,5 +1,7 @@
 import getUser from "../../storage/getUser/index.js"
+import { sec } from "../../storage/sec/index.js"
 import setMoney from "../../storage/setMoney/index.js"
+import { STO } from "../mock/storage.js"
 import updateDom from "../updateDom/index.js"
 
 const unlockGame = (gameIndex) => {
@@ -7,10 +9,20 @@ const unlockGame = (gameIndex) => {
 
   const game = user.gameList[gameIndex]
 
-  console.log(game.unlockPrice)
   if (user.character.money < game.unlockPrice) return
 
-  localStorage.setItem('loteria_user', JSON.stringify({
+  sec(JSON.stringify({
+    ...user,
+    gameList: user.gameList.map((game, i) => {
+      if (i != gameIndex) return game
+      return {
+        ...game,
+        unlock: true
+      } 
+    })
+  }))
+
+  localStorage.setItem(STO, JSON.stringify({
     ...user,
     gameList: user.gameList.map((game, i) => {
       if (i != gameIndex) return game

@@ -17,6 +17,7 @@ const updateDom = (props) => {
   const $buttonMult = document.querySelector('.button-buy-mult')
   const $ticketDiscount = document.querySelector('.ticket-discount')
   const $ticketDiscountInfo = document.querySelector('.ticket-discount-info')
+  console.log('user', user)
   const timeMS = ((4000 / (user.character.level)))
   const timeS = (timeMS / 1000)
 
